@@ -42,6 +42,30 @@ h4{
 .no-margin{
     margin: 0;
 }
+/*BOTONES*/
+.btn{
+    display: block;
+    text-align: center;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+    color: white;
+    text-decoration: none;
+    font-family: font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+@media (min-width:480px){
+    .btn{
+        display: inline-block;
+    }
+}
+.btn-primario{
+    background: black;
+}
+.btn-secundario{
+    background: #784d3c;
+}
 /*HEADER*/
 @media (min-width:768px){
     .barra{
@@ -50,6 +74,7 @@ h4{
         align-items: center;
     }
 }
+
 
 .site-header{
     background:url(../img/banner.jpg);
@@ -121,3 +146,81 @@ site-header h1{
         order: 2;
     }
 }
+/*Opcional:;
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 1rem;
+}
+.entrada-blog:last-of-type{
+    border: none;    
+}
+*/
+/*CURSOS*/
+.cursos-lista{
+    padding: 0;
+    list-style: none;
+}
+.curso{
+    padding-bottom: 3px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.curso:last-of-type{
+    border:none;
+}
+.curso p {
+    font-family: font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+}
+.curso p span{   
+    font-weight: 400;
+}
+.curso p span,
+.curso p.descripcion{
+    font-weight: 400;
+}
+ /*Footer*/
+footer{
+    background: black;
+}
+.barra p{
+    font-weight: 300;
+    color: white;
+    font-family: font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+.barra p span{
+    font-weight: 700;
+    color: white;
+}
+.navegacion a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+
+}
+
+/**PAGINAS SECUNDARIAS**/
+/*NOSOTROS*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+}
+@media (max-width:480px){
+    .grid{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .columna-6{
+        flex-basis: 100%;
+    }
+    
+}
+
+
+
+
