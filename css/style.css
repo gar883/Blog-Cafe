@@ -8,7 +8,9 @@ html{
 body{
     font-family: 'open sans', sans-serif;
     font-size: 1.6rem;
-    line-height: 2;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 /*GLOBALES*/
 img{
@@ -20,7 +22,7 @@ img{
     margin: 0 auto;
 }
 h1, h2, h3, h4{
-    font-family: 'PT Sans',sans-serif;
+    font-family:'PT Sans', sans-serif;;
 }
 h1{
     font-size:4.8rem;
@@ -42,6 +44,15 @@ h4{
 .no-margin{
     margin: 0;
 }
+.alinear-derecha{
+    text-align: end;
+}
+.mw800{
+    max-width: 100rem;
+}
+.no-deco{
+    text-decoration: none;
+}
 /*BOTONES*/
 .btn{
     display: block;
@@ -54,10 +65,15 @@ h4{
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.6rem;
+    flex: 0 0 100%;
+}
+.btn:hover{
+    cursor: pointer;
 }
 @media (min-width:480px){
     .btn{
         display: inline-block;
+        flex: 0 0 auto;
     }
 }
 .btn-primario{
@@ -88,7 +104,8 @@ h4{
     color: white;
     text-decoration: none;
 }
-site-header h1{
+.site-header h1{
+    
     text-align: center;
     font-weight: 300;
 }
@@ -130,7 +147,18 @@ site-header h1{
 }
 .blog, .cursos{
     flex:0 0 100%;
+    
 }
+@media (min-width:768px){
+.contenido-principal::after{
+    content:'';
+    display:block;
+    width: 0.5rem;
+    height: 70rem;
+    background: #A4A4A4;
+    margin:1rem auto;
+}
+    }
 .cursos{
     order: -1;
 }
@@ -162,23 +190,29 @@ site-header h1{
     padding: 0;
     list-style: none;
 }
-.curso{
-    padding-bottom: 3px;
+.cursos{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     border-bottom: 1px solid #e1e1e1;
 }
-.curso:last-of-type{
-    border:none;
+.cursos:last-of-type{
+    border-bottom:none;
 }
-.curso p {
+.cursos p {
     font-family: font-family: 'PT Sans', sans-serif;
     font-weight: 700;
 }
-.curso p span{   
+.cursos h1 span{   
     font-weight: 400;
 }
-.curso p span,
-.curso p.descripcion{
+.cursos p span,
+.cursos p.descripcion{
     font-weight: 400;
+}
+@media (max-width:480px){
+    .t-letra{
+        font-size:4rem; 
+    }
 }
  /*Footer*/
 footer{
@@ -203,24 +237,70 @@ footer{
 }
 
 /**PAGINAS SECUNDARIAS**/
-/*NOSOTROS*/
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 2rem;
-}
-@media (max-width:480px){
-    .grid{
+/**grid**/
+
+
+@media (min-width:768px) {
+    .grid {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
-    .columna-6{
-        flex-basis: 100%;
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columnas-4 {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+
+    .columnas-6 {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8 {
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columnas-10{
+        flex: 0 0 calc(83.3% - 1rem);
     }
     
+    .columnas-12{
+        flex: 0 0 100%;
+    }
+
+}
+/*CONTACTO*/
+.formulario-contacto{
+    padding: 5rem;
+    background: #fff;
+}
+@media (min-width:768px) {
+
+    .formulario-contacto {
+        margin-top: -10rem;
+    }
+}
+.formulario-contacto .campo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    }
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+    font-weight: 700;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea {
+    flex: 1;   
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 20rem;
 }
 
-
-
-
+.formulario-contacto .enviar{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+    
